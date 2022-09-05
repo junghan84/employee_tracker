@@ -4,55 +4,28 @@ CREATE  DATABASE employee_db;
 
 USE employee_db;
 
---create table department
-CREATE TABLE department(
-
-   --create unique id for item
-   id INT NOT NULL AUTO_INCREMENT,
-
-   --dep_name to accept variable-length strings of max 30 characters
-   dept_name VARCHAR(30) NOT NULL,
-
-   --set PRIMARY KEY
-   PRIMARY KEY(id)
-);
-
---Create table employee
+--Create EMPLOYEE TABLE =================
 CREATE TABLE employee(
 
    --create unique id for item
-   id INT NOT NULL AUTO_ICREMENT,
-
-   --set first name to to accept variable-length strings of max 30 characters
-   first_name VARCHAR(30) NOT NULL,
-
-   --set last name to to accept variable-length strings of max 30 characters
-   last_name VARCHAR(30) NOT NULL,
-
-   --set rol id
-   role_id INT NOT NULL,
-
-   --set manager id
-   manager_id INT NOT NULL,
-
-   --set PRIMARY KEY
-   PRIMARY KEY(id)
+   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   firstName VARCHAR(30),
+   lastName VARCHAR(30),
+   roleID INT,
+   managerID INT
 );
 
-CREATE TABLE roles(
-
+--Create DEPARTMENT TABLE ================
+CREATE TABLE department(
    --create unique id for item
-   id INT NOT NULL AUTO_ICREMENT,
+   id INT PRIMARY KEY,
+   name VARCHAR(30)
+);
 
-   --set title to accept variable-length strings of max 30 characters
-   title VARCHAR(30) NOT NULL,
-
-   --set salary to to accept decimal number
-   salary DECIMAL NOT NULL,
-
-   --set  department_id 
-   department INT NOT NULL,
-   
-   --set PRIMARY KEY
-   PRIMARY KEY(id)
+--Create EMPLOYEE ROLE =================
+CREATE Table role(
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   title VARCHAR(30),
+   salary DECIMAL(9,2),
+   departmentID INT
 );
